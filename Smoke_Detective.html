@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Functions and Variables Example</title>
+</head>
+
+<body style="background-color: rgb(235, 239, 241);"> 
+    <h1 style="font-family: Verdana;"><center>Welcome - My Smoke Detective</center></h1>
+    <img src="https://www.fineart-panorama.de/330260/nebel-uber-annweiler-blick-vom-rehbergturm.jpg" alt="Image not found" style="width: 1425px;height: 375px;">
+    <br>
+    <h2 style="font-family: Verdana;"><center>Über My Smoke Detective</center></h2>
+    <p style="font-family: Verdana;"><center>My Smoke Detective ist eine Internet of Things 
+        Applikation. Das Hauptziel von My Smoke Detective 
+        ist es zu erkennen, ob geraucht wird. Immer dann, 
+        wenn unerwünschte Raucher sich am Ort der Installation 
+        aufhalten, schlägt der "Detective" Alarm und vertreibt 
+        die unerwünschten Raucher. Diese Applikation hilft mir 
+        und meinen Mitbewohnern unseren Wohnungseingang mitten in der
+         Altstadt sauber zu halten (Keine Asche, Rauchgestank 
+         und Zigarettenstummel). Zuästzlich stellt der Detective 
+         Echtzeitdaten zur Temeperatur und der Luftfeuchtigkeit 
+         zur Verfügung.</center></p>
+         <hr>
+    <!-- Events example -->
+    <h3 style="font-family: Verdana;" style="color: brown;">Messungen</h3>
+    <p style="font-family: Verdana;">Sensordaten: <span id="sensormessung"></span></p>
+    <p style="font-family: Verdana;" style="color: red;">Alarm (automatisch): <span id="rauchalarm"></span></p>
+    <p style="font-family: Verdana;" style="color: red;">Alarm (manuell): <span id="rauch"></span></p>
+    <hr>
+    <h3 style="font-family: Verdana;">Ich möchte die aktuellen Sensordaten abrufen</h3>
+    <!-- Variablen -->
+    <p style="font-family: Verdana;">Temperatur: <span id="temperature"></span></p>
+    <button onclick="getTemperature()">Temperatur anzeigen</button>
+    <br>
+    <p style="font-family: Verdana;">Feuchtigkeit: <span id="humidity"></span></p>
+    <button onclick="getHumidity()">Feuchtigkeit anzeigen</button>
+    <br>
+    <p style="font-family: Verdana;">Rauch in der Luft: <span id="gas"></span></p>
+    <button onclick="getGas()">GasResistance anzeigen</button>
+    <p style="color: red;">Aktuell misst der Sensor leider die GasResistance-Daten nicht korrekt. Bitte Rauchvorkommnis manuell eingeben.</p>
+    <br>
+
+    <hr>
+    <h3 style="font-family: Verdana;">Rauchalarm manuell auslösen (Workarround)</h3>
+    <p style="color: red;">Für Rauch (1) eingeben / Für kein Rauch (0) eingeben.</p>
+
+    <!-- Call functions example  -->
+    <p>Set Smoke</p>
+    <input type="number" id="smokeinput" value="0">
+    <button onclick="setSmoke()">Alarm Button</button>
+    <br>
+    <p style="font-family: Verdana;">Smoke <span id="smoke"></span></p>
+    <button onclick="getSmoke()">Smoke Wert anzeigen</button>
+    <br>
+    <hr>
+    <p style="font-family: Verdana;">Letzter Event: <span id="lastevent"></span></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Smoke_Detective.js"></script>
+</body>
+
+</html>
